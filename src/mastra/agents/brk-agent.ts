@@ -46,7 +46,7 @@ import { openai } from '@ai-sdk/openai';
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
-import { documentSearchTool } from '../tools/document-search-tool';
+import { documentSearchTool } from '../tools/document-search-tool.js';
 
 export const berkshireAgent = new Agent({
   name: 'Berkshire Hathaway Intelligence Agent',

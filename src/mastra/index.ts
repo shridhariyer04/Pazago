@@ -45,8 +45,8 @@ dotenv.config();
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
 import { LibSQLStore } from '@mastra/libsql';
-import { documentProcessingWorkflow } from './workflows/document-processing-workflow';
-import { berkshireAgent } from './agents/brk-agent';
+import { documentProcessingWorkflow } from './workflows/document-processing-workflow.js';
+import { berkshireAgent } from './agents/brk-agent.js';
 
 export const mastra = new Mastra({
   workflows: { documentProcessingWorkflow },
@@ -84,10 +84,8 @@ async function main(): Promise<void> {
   }
 }
 
-// CommonJS entry check
-if (require.main === module) {
-  main().catch((error) => {
-    console.error('❌ Unhandled error:', error);
-    process.exit(1);
-  });
-}
+// ✅ ESM entry point – just call main
+main().catch((error) => {
+  console.error('❌ Unhandled error:', error);
+  process.exit(1);
+});

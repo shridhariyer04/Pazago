@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
-import { processPDF } from '../utils/pdf-processor';
+import { processPDF } from '../utils/pdf-processor.js';
 import fs from 'fs';
 import path from 'path';
 
